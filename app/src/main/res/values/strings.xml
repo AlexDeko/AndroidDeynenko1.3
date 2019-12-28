@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Система мониторинга здоровья Дейненко</string>
+    <string name="LNS">ФИО</string>
+    <string name="age">Возраст</string>
+    <string name="up_pressure">Верхнее давление</string>
+    <string name="down_pressure">Нижнее давление</string>
+    <string name="tachycardia">Тахикардия</string>
+    <string name="date">Дата замера</string>
+    <string name="weight">Вес</string>
+    <string name="pulse">Пульс</string>
+    <string name="count_step">Количество шагов</string>
+    <string name="record_pressure">Запись давления</string>
+    <string name="record_hp">Запись жизненных показателей</string>
+    <string name="save">Сохранить</string>
+    <string name="errorParseInt">Вы ввели не числовое значение </string>
+    <string name="item">ItemIc</string>
+
+
+
+</resources>
