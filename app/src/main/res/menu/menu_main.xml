@@ -6,7 +6,7 @@
 
     <item
         android:id="@+id/ic"
-        android:icon="@mipmap/baseline_favorite_black_18dp"
+        android:icon="@drawable/baseline_favorite_black_18dp"
         android:orderInCategory="100"
         android:title="@string/item"
         app:showAsAction="always" />

@@ -26,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        myToolbar.setNavigationIcon(getResources()
+                .getDrawable(R.drawable.baseline_favorite_black_18dp, null));
+        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         txtName = findViewById(R.id.nameUser);
         txtAge = findViewById(R.id.numAge);
