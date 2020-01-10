@@ -1,7 +1,6 @@
 package com.homework1_3.androiddeynenko;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 public class PressureUser {
     private int upPressure;
@@ -10,8 +9,6 @@ public class PressureUser {
     private String tachycardia;
     private LocalDateTime date;
 
-
-    ArrayList<PressureUser> userList = new ArrayList<>();
 
     public PressureUser(int upPressure, int downPressure, int pulse, String tachycardia,
                         LocalDateTime date) {

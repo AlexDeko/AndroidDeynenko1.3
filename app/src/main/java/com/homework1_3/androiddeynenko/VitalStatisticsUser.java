@@ -10,10 +10,4 @@ public class VitalStatisticsUser {
         this.weight = weight;
         this.step = step;
     }
-
-    ArrayList<VitalStatisticsUser> userListVS = new ArrayList<>();
-
-
-
-
 }

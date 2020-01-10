@@ -22,25 +22,7 @@ public class VitalStatisticsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vital_statistics);
 
-        newWeight = findViewById(R.id.infoWeight);
-        try{
-            weight = Double.parseDouble(newWeight.getText().toString());
-        }catch (Exception e){
-            Toast toast = Toast.makeText(VitalStatisticsActivity.this,
-                    getString(R.string.errorParseInt),
-                    Toast.LENGTH_LONG);
-            toast.show();
-        }
 
-        newStep = findViewById(R.id.infoStep);
-        try{
-            step = Integer.parseInt(newStep.getText().toString());
-        }catch (Exception e){
-            Toast toast = Toast.makeText(VitalStatisticsActivity.this,
-                    getString(R.string.errorParseInt),
-                    Toast.LENGTH_LONG);
-            toast.show();
-        }
         //жизненые показатели
         saveVS();
     }
@@ -51,9 +33,29 @@ public class VitalStatisticsActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                newWeight = findViewById(R.id.infoWeight);
+                try{
+                    weight = Double.parseDouble(newWeight.getText().toString());
+                }catch (Exception e){
+                    Toast toast = Toast.makeText(VitalStatisticsActivity.this,
+                            getString(R.string.errorParseInt),
+                            Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
+                newStep = findViewById(R.id.infoStep);
+                try{
+                    step = Integer.parseInt(newStep.getText().toString());
+                }catch (Exception e){
+                    Toast toast = Toast.makeText(VitalStatisticsActivity.this,
+                            getString(R.string.errorParseInt),
+                            Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
                 Log.i(TAG_VS, "Сохранение");
+
                 VitalStatisticsUser vitalStatisticsUser = new VitalStatisticsUser(weight, step);
-                vitalStatisticsUser.userListVS.add(vitalStatisticsUser);
             }
         });
     }

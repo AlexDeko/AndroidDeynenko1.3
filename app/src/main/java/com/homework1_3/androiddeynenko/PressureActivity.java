@@ -29,38 +29,6 @@ public class PressureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pressure);
 
-        newUpPressure = findViewById(R.id.infoUpPressure);
-        try{
-            upPressure = Integer.parseInt(newUpPressure.getText().toString());
-        }catch (Exception e){
-            Toast toast = Toast.makeText(PressureActivity.this,
-                    getString(R.string.errorParseInt),
-                    Toast.LENGTH_LONG);
-            toast.show();
-        }
-
-        newDownPressure = findViewById(R.id.infoDownPressure);
-        try{
-            downPressure  = Integer.parseInt(newDownPressure.getText().toString());
-        }catch (Exception e){
-            Toast toast = Toast.makeText(PressureActivity.this,
-                    getString(R.string.errorParseInt),
-                    Toast.LENGTH_LONG);
-            toast.show();
-        }
-
-        newPulse = findViewById(R.id.infoPulse);
-        try{
-            pulse = Integer.parseInt(newPulse.getText().toString());
-        }catch (Exception e){
-            Toast toast = Toast.makeText(PressureActivity.this,
-                    getString(R.string.errorParseInt),
-                    Toast.LENGTH_LONG);
-            toast.show();
-        }
-
-        checkBox = findViewById(R.id.checkTachycardia);
-        localeDate = LocalDateTime.now();
 
         SavePressure();
     }
@@ -71,10 +39,43 @@ public class PressureActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                newUpPressure = findViewById(R.id.infoUpPressure);
+                try{
+                    upPressure = Integer.parseInt(newUpPressure.getText().toString());
+                }catch (Exception e){
+                    Toast toast = Toast.makeText(PressureActivity.this,
+                            getString(R.string.errorParseInt),
+                            Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
+                newDownPressure = findViewById(R.id.infoDownPressure);
+                try{
+                    downPressure  = Integer.parseInt(newDownPressure.getText().toString());
+                }catch (Exception e){
+                    Toast toast = Toast.makeText(PressureActivity.this,
+                            getString(R.string.errorParseInt),
+                            Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
+                newPulse = findViewById(R.id.infoPulse);
+                try{
+                    pulse = Integer.parseInt(newPulse.getText().toString());
+                }catch (Exception e){
+                    Toast toast = Toast.makeText(PressureActivity.this,
+                            getString(R.string.errorParseInt),
+                            Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
+                checkBox = findViewById(R.id.checkTachycardia);
+                localeDate = LocalDateTime.now();
+
+
                 Log.i(TAG_PRESSURE, "Сохранение");
                 PressureUser pressureUser = new PressureUser(upPressure, downPressure, pulse,
                         checkBox.toString(), localeDate);
-                pressureUser.userList.add(pressureUser);
             }
         });
 
